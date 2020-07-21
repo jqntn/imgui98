@@ -889,7 +889,7 @@ bool ImGui::CloseButton(ImGuiID id, const ImVec2& pos)
     ImU32 cross_col = GetColorU32(ImGuiCol_Text);
 
 #ifdef WIN98 // close button icon
-    RenderText(bb.Min + ImVec2(2.0f, 2.0f), "\u00D7");
+    RenderText(bb.Min + ImVec2(2.0f, 2.0f), "\xC3\x97");
 #else
     ImVec2 cross_center = bb.GetCenter() - ImVec2(0.5f, 0.5f);
     float cross_extent = g.FontSize * 0.5f * 0.7071f - 1.0f;
@@ -927,7 +927,7 @@ bool ImGui::CollapseButton(ImGuiID id, const ImVec2& pos)
     WinAddRect(bb.Min, bb.Max, hovered && held);
 
     // collapse icon
-    RenderText(bb.Min + ImVec2(2.0f, 2.0f), "\u00D6");
+    RenderText(bb.Min + ImVec2(2.0f, 2.0f), "\xC3\x98");
 #else
     if (hovered || held)
         window->DrawList->AddRectFilled(bb.Min, bb.Max, bg_col);
