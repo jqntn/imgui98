@@ -1097,6 +1097,9 @@ namespace ImGui
     IMGUI_API ImGuiViewport* FindViewportByID(ImGuiID id);                          // this is a helper for backends.
     IMGUI_API ImGuiViewport* FindViewportByPlatformHandle(void* platform_handle);   // this is a helper for backends. the type platform_handle is decided by the backend (e.g. HWND, MyWindow*, GLFWwindow* etc.)
 
+    // Windows98 functions
+    IMGUI_API void          WinAddRect(const ImVec2& min, const ImVec2& max, bool inset);
+    IMGUI_API void          StyleWin98(ImGuiStyle* dst = NULL);
 } // namespace ImGui
 
 //-----------------------------------------------------------------------------
