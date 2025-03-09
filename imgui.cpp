@@ -6935,7 +6935,7 @@ void ImGui::RenderWindowTitleBarContents(ImGuiWindow* window, const ImRect& titl
     float button_sz = g.FontSize;
 #ifdef WIN98 // draw title bar
     button_sz = 16.0f;
-    pad_r = 0.0f;
+    pad_r = 1.0f;
 #endif
     ImVec2 close_button_pos;
     ImVec2 collapse_button_pos;
@@ -6956,8 +6956,8 @@ void ImGui::RenderWindowTitleBarContents(ImGuiWindow* window, const ImRect& titl
     }
 
 #ifdef WIN98 // windows style title bar
-    close_button_pos += ImVec2(0.0f, 2.0f);
-    collapse_button_pos += ImVec2(0.0f, 2.0f);
+    close_button_pos += ImVec2(0.0f, -2.0f);
+    collapse_button_pos += ImVec2(0.0f, -2.0f);
 
     ImU32 col_left = IM_COL32(128,128,128,255);
     ImU32 col_right = IM_COL32(181,181,181,255);
