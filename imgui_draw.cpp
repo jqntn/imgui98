@@ -448,7 +448,6 @@ void ImGui::StyleWin98(ImGuiStyle* dst)
     colors[ImGuiCol_NavWindowingDimBg]      = ImVec4(0.20f, 0.20f, 0.20f, 0.20f);
     colors[ImGuiCol_ModalWindowDimBg]       = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
 
-
     if (dst != NULL) return;
 
     // Fonts + Icons
@@ -458,8 +457,8 @@ void ImGui::StyleWin98(ImGuiStyle* dst)
             return;
         }
     }
-    ImFont *font = io.Fonts->AddFontFromFileTTF("../../MS Sans Serif.ttf", 12.0f, NULL, io.Fonts->GetGlyphRangesDefault());
-    io.Fonts->AddFontFromFileTTF("../../MS Sans Serif Bold.ttf", 12.0f, NULL, io.Fonts->GetGlyphRangesDefault());
+    ImFont *font = io.Fonts->AddFontFromFileTTF("../../misc/fonts/MS Sans Serif.ttf", 12.0f, NULL, io.Fonts->GetGlyphRangesDefault());
+    io.Fonts->AddFontFromFileTTF("../../misc/fonts/MS Sans Serif Bold.ttf", 12.0f, NULL, io.Fonts->GetGlyphRangesDefault());
 
     // Run-length encoding of some icons
     // In retrorespect I should have used an icon map like FONT_ATLAS_DEFAULT_TEX_DATA_PIXELS
@@ -505,8 +504,6 @@ void ImGui::StyleWin98(ImGuiStyle* dst)
             done:;
         }
     }
-
-
 }
 #endif
 

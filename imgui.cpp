@@ -6752,8 +6752,6 @@ void ImGui::WinAddRect(const ImVec2& min, const ImVec2& max, bool inset)
         tmp = top_left_inner; top_left_inner = bottom_right_inner; bottom_right_inner = tmp;
     }
 
-    // ImU32 fill_col = IM_COL32(192,192,192,255);
-
     ImDrawList* draw_list = ImGui::GetWindowDrawList();
     ImVec2 a = min + ImVec2(0.5f, 0.5f);
     ImVec2 b = max - ImVec2(0.5f, 0.5f);
@@ -6768,7 +6766,6 @@ void ImGui::WinAddRect(const ImVec2& min, const ImVec2& max, bool inset)
     draw_list->PathLineTo(ImVec2(b.x, a.y));
     draw_list->PathStroke(bottom_right, false, 1.0f);
 
-
     draw_list->PathLineTo(ImVec2(a.x, b.y) + ImVec2(1, -1));
     draw_list->PathLineTo(a + ImVec2(1, 1));
     draw_list->PathLineTo(ImVec2(b.x, a.y) + ImVec2(-1, 1));
@@ -6779,7 +6776,6 @@ void ImGui::WinAddRect(const ImVec2& min, const ImVec2& max, bool inset)
     draw_list->PathLineTo(ImVec2(b.x, a.y) + ImVec2(-1, 1));
     draw_list->PathStroke(bottom_right_inner, false, 1.0f);
 }
-
 
 static void RenderWindowOuterSingleBorder(ImGuiWindow* window, int border_n, ImU32 border_col, float border_size)
 {
@@ -6939,7 +6935,6 @@ void ImGui::RenderWindowTitleBarContents(ImGuiWindow* window, const ImRect& titl
     float button_sz = g.FontSize;
 #ifdef WIN98 // draw title bar
     button_sz = 16.0f;
-    // pad_l = 0.0f;
     pad_r = 0.0f;
 #endif
     ImVec2 close_button_pos;
@@ -6961,7 +6956,6 @@ void ImGui::RenderWindowTitleBarContents(ImGuiWindow* window, const ImRect& titl
     }
 
 #ifdef WIN98 // windows style title bar
-
     close_button_pos += ImVec2(0.0f, 2.0f);
     collapse_button_pos += ImVec2(0.0f, 2.0f);
 
@@ -6987,7 +6981,6 @@ void ImGui::RenderWindowTitleBarContents(ImGuiWindow* window, const ImRect& titl
 
         col_right = ColorConvertFloat4ToU32(secondary);
     }
-
 
     window->DrawList->AddRectFilledMultiColor(title_bar_rect.Min, title_bar_rect.Max, col_left, col_right, col_right, col_left);
 #endif

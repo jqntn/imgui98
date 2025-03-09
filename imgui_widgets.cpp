@@ -885,6 +885,7 @@ bool ImGui::CloseButton(ImGuiID id, const ImVec2& pos)
     if (hovered)
         window->DrawList->AddRectFilled(bb.Min, bb.Max, bg_col);
 #endif
+
     RenderNavCursor(bb, id, ImGuiNavRenderCursorFlags_Compact);
     ImU32 cross_col = GetColorU32(ImGuiCol_Text);
 
@@ -1021,7 +1022,6 @@ bool ImGui::ScrollbarEx(const ImRect& bb_frame, ImGuiID id, ImGuiAxis axis, ImS6
     const bool allow_interaction = (alpha >= 1.0f);
 
 #ifdef WIN98
-
     ImRect bb = bb_frame;
     float button_size = (axis == ImGuiAxis_X) ? bb.GetHeight() : bb.GetWidth();
     ImVec2 button_size_rect(button_size, button_size);
@@ -1100,7 +1100,6 @@ bool ImGui::ScrollbarEx(const ImRect& bb_frame, ImGuiID id, ImGuiAxis axis, ImS6
 
     // Render
 #ifdef WIN98 // scrollbar
-
     ImRect grab_rect;
     if (axis == ImGuiAxis_X) {
         grab_rect = ImRect(ImLerp(bb.Min.x, bb.Max.x, grab_v_norm), bb.Min.y, ImLerp(bb.Min.x, bb.Max.x, grab_v_norm) + grab_h_pixels, bb.Max.y);
