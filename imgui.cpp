@@ -7106,14 +7106,15 @@ static void RenderWindowOuterSingleBorder(ImGuiWindow* window, int border_n, ImU
 
 static void ImGui::RenderWindowOuterBorders(ImGuiWindow* window)
 {
-    ImGuiContext& g = *GImGui;
     const float border_size = window->WindowBorderSize;
-    const ImU32 border_col = GetColorU32(ImGuiCol_Border);
 
 #ifdef WIN98 // window borders
     if (border_size > 0.0f && !(window->Flags & ImGuiWindowFlags_NoBackground))
         WinAddRect(window->Pos, window->Pos + window->Size, false);
 #else
+    ImGuiContext& g = *GImGui;
+    const ImU32 border_col = GetColorU32(ImGuiCol_Border);
+
     if (border_size > 0.0f && (window->Flags & ImGuiWindowFlags_NoBackground) == 0)
         window->DrawList->AddRect(window->Pos, window->Pos + window->Size, border_col, window->WindowRounding, 0, window->WindowBorderSize);
     else if (border_size > 0.0f)
